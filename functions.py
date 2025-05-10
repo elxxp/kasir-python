@@ -7,25 +7,6 @@ def daftarBarang():
     print(" 3. Tepung Rp 20,000    |   7. Air putih Rp 2,000")
     print(" 4. Beras Rp 50,000     |   8. Telur Rp 17,000")
 
-def getHarga(kodeProduk):
-    match kodeProduk:
-        case 1:
-            return 12000
-        case 2:
-            return 8000
-        case 3:
-            return 20000
-        case 4:
-            return 50000
-        case 5:
-            return 23000
-        case 6:
-            return 3000
-        case 7:
-            return 2000
-        case 8:
-            return 17000
-
 def getProduk(kodeProduk):
     match kodeProduk:
         case 1:
@@ -45,6 +26,24 @@ def getProduk(kodeProduk):
         case 8:
             return "Telur"
 
+def getHarga(kodeProduk):
+    match kodeProduk:
+        case 1:
+            return 12000
+        case 2:
+            return 8000
+        case 3:
+            return 20000
+        case 4:
+            return 50000
+        case 5:
+            return 23000
+        case 6:
+            return 3000
+        case 7:
+            return 2000
+        case 8:
+            return 17000
 
 def totalPerProduk(produk, jumlah):
     match produk:

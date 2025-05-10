@@ -9,10 +9,11 @@ while selesai == False:
     produk = int(input("\n = silahkan pilih produk yang ingin dibeli: "))
 
     if produk > 0 and produk < 9:
-
         print(f" = memilih produk {functions.getProduk(produk)} Rp {functions.getHarga(produk):,}")
-        
         jumlah = int(input(" = silahkan masukan jumlah produk: "))
+        if jumlah < 1:
+            print(" = error, jumlah produk tidak valid. \n")
+            break
 
         pesanan += [[produk, jumlah]]
         subtotal += functions.totalPerProduk(produk, jumlah)
@@ -28,7 +29,7 @@ while selesai == False:
 
     else: #if cek produk
         print(" = error, produk tidak ditemukan \n")
-        
+        break
 
 else: #while
     if subtotal >= 100000 and subtotal < 200000:
@@ -52,7 +53,6 @@ else: #while
     nomer = -1
     for dataPesanan in pesanan:
         order = nomer + 1
-
         totalPerProduk = functions.totalPerProduk([dataPesanan][order][0], [dataPesanan][order][1])
         print(f" = Rp {totalPerProduk:,} ... {[dataPesanan][order][1]}x {functions.getProduk([dataPesanan][order][0])}")
 
